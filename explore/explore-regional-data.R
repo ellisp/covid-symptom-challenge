@@ -19,18 +19,23 @@ raw_data_regions %>%
   count(region_agg, gender)
 
 
+oz_regions <- raw_data_regions %>%
+  filter(country_agg == "Australia" & gender == "overall" & age_bucket == "overall")
+
 CairoPDF("output/lots-of-vars-oz-states.pdf", 11, 8)
 
 for(j in 12:ncol(raw_data_regions)){
-  raw_data_regions$tmp <- pull(raw_data_regions, j)
+  oz_regions$tmp <- pull(oz_regions, j)
+  if(sum(!is.na(oz_regions$tmp)) < 10){
+    next()
+  }
 
-  p0 <- raw_data_regions %>%
-    filter(country_agg == "Australia" & gender == "overall" & age_bucket == "overall") %>%
+  p0 <- oz_regions %>%
     ggplot(aes(x = date, y = tmp)) +
     geom_point() +
     geom_smooth(se = FALSE, span = 1/7, method = "loess", formula = "y ~ x") +
-    labs(y = names(raw_data_regions)[j],
-         title = names(raw_data_regions)[j],
+    labs(y = names(oz_regions)[j],
+         title = names(oz_regions)[j],
          x = "Date in 2020")
   
   p1 <- p0 + 
@@ -44,6 +49,6 @@ for(j in 12:ncol(raw_data_regions)){
   print(p1)
   print(p2)
   
-  raw_data_regions$tmp <- NULL
+  oz_regions$tmp <- NULL
 }
 dev.off()
