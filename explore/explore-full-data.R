@@ -42,8 +42,10 @@ for(j in 9:ncol(raw_data)){
     ggplot(aes(x = date, y = tmp, colour = gender)) +
     facet_wrap(~country_agg, scales = "free_y") +
     geom_point(size = 0.3) +
-    geom_smooth(se = FALSE, span = 1/7, method = "loess") +
-    labs(y = names(raw_data)[j])
+    geom_smooth(se = FALSE, span = 1/7, method = "loess", formula = "y ~ x") +
+    labs(y = names(raw_data)[j],
+         title = names(raw_data)[j],
+         x = "Date in 2020")
   print(p)
 }
 dev.off()
