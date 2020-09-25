@@ -12,7 +12,7 @@ for(i in 1:length(csvs)){
   
   if(!csvs[i] %in% list.files(path = "raw-data", pattern = ".csv")){
     download.file(glue(baseurl, csvs[i]),
-                  glue("raw-data/", csvs[i]))
+                  glue("raw-data/country/", csvs[i]))
   }
 }
 
