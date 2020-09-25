@@ -1,6 +1,6 @@
 
 #-----------------Main survey by country-----------------
-csvs <- list.files("raw-data", pattern = "country_full\\.csv$", full.names = TRUE)
+csvs <- list.files("raw-data/country", pattern = "country_full\\.csv$", full.names = TRUE)
 
 raw_data_l <- lapply(csvs, read_csv)
 
