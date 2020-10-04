@@ -69,7 +69,7 @@ p3 <- oz_regions_5 %>%
   ggplot(aes(x = date, y = pct_feel_depressed_none_time_weighted)) +
   geom_point(aes(size = total_responses)) +
   geom_smooth(se = FALSE, span = 1/4, method = "loess", formula = "y ~ x") +
-  labs(subtitle = str_wrap("Percentage of population reporting they feel depressed none of the time
+  labs(subtitle = str_wrap("Percentage of population reporting they feel depressed 'none of the time'
        markedly drops in the period of the serious Covid-19 outbreak and response from June 
                            to September.", 120),
        title = "Survey-reported levels of depression **are** related to Covid-19 incidence and response",
