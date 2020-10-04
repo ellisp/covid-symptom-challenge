@@ -2,7 +2,7 @@ library(tidyverse)
 library(glue)
 library(Cairo)
 library(extrafont)
-library(frs)
+library(frs) # devtools::install_github("ellisp/frs-r-package/pkg")
 library(scales)
 library(ggtext)
 
