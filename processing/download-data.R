@@ -10,7 +10,7 @@ csvs <- unlist(str_extract_all(filelist, '0.*?\\.csv'))
 
 for(i in 1:length(csvs)){
   
-  if(!csvs[i] %in% list.files(path = "raw-data", pattern = ".csv")){
+  if(!csvs[i] %in% list.files(path = "raw-data/country", pattern = ".csv")){
     download.file(glue(baseurl, csvs[i]),
                   glue("raw-data/country/", csvs[i]))
   }

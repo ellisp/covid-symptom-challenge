@@ -40,3 +40,5 @@ vignettes/*.pdf
 
 *.csv
 *.pdf
+*.svg
+*.png
