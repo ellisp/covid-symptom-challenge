@@ -1,14 +1,12 @@
 # This script is for producing static images for a blog post on Free Range Statistics
 #
+# This script isn't self sufficient, you need to have loaded packages nad hte data first.
+# Run this script from build.R
+#
 # Peter Ellis 4 October 2020
 
-# In partnership with Facebook Data for Good, the Delphi Group at Carnegie
-# Mellon University (CMU), the Joint Program on Survey Methodology at the
-# University of Maryland (UMD), the Duke Margolis Center for Health Policy, and
-# Resolve to Save Lives, an initiative of Vital Strategies Organized by Catalyst
-# @Health 2.0
 
-the_caption <- "UMD Global Symptom Survey of Facebook users, analysed at http://freerangestats.info"
+the_caption <- "University of Maryland Global Symptom Survey of Facebook users, analysed at http://freerangestats.info"
 the_countries <- c("Australia", "Brazil", "Singapore", "Italy", "New Zealand", "United Kingdom")
 
 # colours for male and female used by Washington Post 2017; see https://blog.datawrapper.de/gendercolor/
